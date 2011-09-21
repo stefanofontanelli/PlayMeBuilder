@@ -1,0 +1,52 @@
+PlayMeBuilder - A Python library to build clients for Play.me API.
+===========================================
+
+(C) 2011 Stefano fontanelli < s.fontanelli | gmail : com >
+
+
+Overview
+--------
+PlayMeBuilder try to solve the boring task to create PlayMe API clients 
+for multiple programming languages and platforms.
+The user specifies an XML specification file which describes the PlayMe API,
+(don't worry it is included in the repository) and the library do the magic 
+using a set of predefined skeleton templates.
+
+The official API can be found at http://lab.playme.com.
+
+
+Getting Started
+---------------
+You can download and install PlayMeBuilder releases using 
+'pip install PlayMe' or 'easy_install PlayMe'.
+
+You can get the development version from Git repository on github,
+then run "python setup.py install".
+
+In both cases at the end of installation process you can run a script
+named 'playme':
+
+    $ playme -h
+    Usage: playme build -l LANGUAGE -f FILE -d DESTINATION
+
+    Options:
+      -h, --help            show this help message and exit.
+
+      -f FILE, --file=FILE  FILE contains XML specifications of the API.
+
+      -l LANGUAGE, --language=LANGUAGE
+                            LANGUAGE specifies the programming language in which
+                            the API will be implemented (i.e. Python).
+
+      -d DESTINATION, --destination=DESTINATION
+                            DESTINATION specifies the folder in which the API
+                            clients will be saved.
+
+If you run without options:
+
+    $ playme
+    $ playme build
+
+the script use the internal XML schema to build an API client 
+for each supported language, it saves them in the home folder of the user.
+

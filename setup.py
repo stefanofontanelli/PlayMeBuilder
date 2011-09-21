@@ -13,7 +13,7 @@ The official API can be found at http://lab.playme.com.
       keywords='Play.me API',
       author='Stefano Fontanelli',
       author_email='s.fontanelli@gmail.com',
-      url='http://github.com/stefanofontanelli/playme/builder',
+      url='http://github.com/stefanofontanelli/PlayMeBuilder',
       license='GPLv3',
       packages=['PlayMeBuilder'],
       requires=['jinja2', 'MarkupSage'],
