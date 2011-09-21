@@ -1,0 +1,52 @@
+#! /usr/bin/python
+
+from optparse import OptionParser
+from PlayMeBuilder.parser import API
+from PlayMeBuilder.factory import SourceFactory
+import os.path
+
+
+if __name__ == '__main__':
+
+    usage = "usage: %prog build [-l LANGUAGE -f FILE -d DESTINATION]"
+
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-f", "--file",
+                      dest="filename",
+                      help="FILE contains XML specifications of the API.",
+                      metavar="FILE",
+                      default=os.path.join(__import__('playmebuilder').__path__[0], 
+                                           'data', 'api.xml'),
+                      type="string")
+
+    parser.add_option("-l", "--language",
+                      dest="language",
+                      help="LANGUAGE specifies the programming language " + \
+                           "in which the API will be implemented (i.e. Python).",
+                      metavar="LANGUAGE",
+                      default="python",
+                      type="string")
+
+    parser.add_option("-d", "--destination",
+                      dest="dst",
+                      help="DESTINATION specifies the folder " + \
+                           "in which the API implementation will be saved.",
+                      metavar="DESTINATION",
+                      default=os.path.expanduser('~'),
+                      type="string")
+
+    (options, args) = parser.parse_args()
+
+    if len(args) < 1:
+        args.append('build')
+        #parser.error("you must specify an action to perform.")
+
+    if len(args) > 1:
+        parser.error("you must specify one argument only.")
+
+    if args[0].lower() != 'build':
+        parser.error("Unknown action, cannot perform it.")
+
+    factory = SourceFactory(API(options.filename))
+    factory.build(options.language.lower(), options.dst)

@@ -1,0 +1,3 @@
+include README
+recursive-include playmebuilder/data *.*
+recursive-include playmebuilder/templates *.*

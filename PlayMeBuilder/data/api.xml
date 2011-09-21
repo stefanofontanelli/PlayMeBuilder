@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<api name="PlayMe" version="1.0" uri="http://api.playme.com">
+
+    <entities>
+        <entity name="Album">
+            <methods>
+                <method name="get" public="true" created="1.0">
+                    <description>
+                        <![CDATA[Retrieves album information by album identifier.]]>
+                    </description>
+                    <request>
+                        <methods>
+                            <method name="GET"/>
+                            <method name="POST"/>
+                        </methods>
+                        <fields>
+                            <field name="apikey" required="true">
+                                <description>
+                                     <![CDATA[Application developer identifier.]]>
+                                </description>
+                            </field>
+                            <field name="country" required="false">
+                                <description>
+                                     <![CDATA[Catalogue country.]]>
+                                </description>
+                            </field>
+                            <field name="format" required="false">
+                                <description>
+                                     <![CDATA[Output format.]]>
+                                </description>
+                            </field>
+                            <field name="albumCode" required="true">
+                                <description>
+                                     <![CDATA[Album code within Dada catalogue.]]>
+                                </description>
+                            </field>
+                        </fields>
+                    </request>
+                </method>
+
+                <method name="getTracks" public="true" created="1.0">
+                    <description>
+                        <![CDATA[Retrieves album infos and tracklist in full format by album identifier.]]>
+                    </description>
+                    <request>
+                        <methods>
+                            <method name="GET"/>
+                            <method name="POST"/>
+                        </methods>
+                        <fields>
+                            <field name="apikey" required="true">
+                                <description>
+                                     <![CDATA[Application developer identifier.]]>
+                                </description>
+                            </field>
+                            <field name="country" required="false">
+                                <description>
+                                     <![CDATA[Catalogue country.]]>
+                                </description>
+                            </field>
+                            <field name="format" required="false">
+                                <description>
+                                     <![CDATA[Output format.]]>
+                                </description>
+                            </field>
+                            <field name="albumCode" required="true">
+                                <description>
+                                     <![CDATA[Album code within Dada catalogue.]]>
+                                </description>
+                            </field>
+                        </fields>
+                    </request>
+                </method>
+
+                <method name="search" public="true" created="1.0">
+                    <description>
+                        <![CDATA[Searches albums by author and title by a query string: returns a list made up by albums whose author or title matches the query string. Note that words within query string are connected by AND, so that all of them must appear within the album title or the album author's name. This implies that sarching with query string query=nirvana nevermind will give an empty result as Nirvana is the author's name and Nevermind the album title.]]>
+                    </description>
+                    <request>
+                        <methods>
+                            <method name="GET"/>
+                            <method name="POST"/>
+                        </methods>
+                        <fields>
+                            <field name="apikey" required="true">
+                                <description>
+                                     <![CDATA[Application developer identifier.]]>
+                                </description>
+                            </field>
+                            <field name="country" required="false">
+                                <description>
+                                     <![CDATA[Catalogue country.]]>
+                                </description>
+                            </field>
+                            <field name="format" required="false">
+                                <description>
+                                     <![CDATA[Output format.]]>
+                                </description>
+                            </field>
+                            <field name="query" required="true">
+                                <description>
+                                     <![CDATA[Words to search for (joined by AND).]]>
+                                </description>
+                            </field>
+                            <field name="page" required="false">
+                                <description>
+                                     <![CDATA[Result page.]]>
+                                </description>
+                            </field>
+                            <field name="step" required="false">
+                                <description>
+                                     <![CDATA[Number of items to retrieve.]]>
+                                </description>
+                            </field>
+                            <field name="order" required="false">
+                                <description>
+                                     <![CDATA[Sorting field (album_name | artist_name). If not provided, results are sorted by matching relevance in descending order.]]>
+                                </description>
+                            </field>
+                            <field name="sort" required="false">
+                                <description>
+                                     <![CDATA[Sorting direction (asc | desc).]]>
+                                </description>
+                            </field>
+                        </fields>
+                    </request>
+                </method>
+
+                <method name="searchByName" public="true" created="1.0">
+                    <description>
+                        <![CDATA[Searches albums by title.]]>
+                    </description>
+                    <request>
+                        <methods>
+                            <method name="GET"/>
+                            <method name="POST"/>
+                        </methods>
+                        <fields>
+                            <field name="apikey" required="true">
+                                <description>
+                                     <![CDATA[Application developer identifier.]]>
+                                </description>
+                            </field>
+                            <field name="country" required="false">
+                                <description>
+                                     <![CDATA[Catalogue country.]]>
+                                </description>
+                            </field>
+                            <field name="format" required="false">
+                                <description>
+                                     <![CDATA[Output format.]]>
+                                </description>
+                            </field>
+                            <field name="query" required="true">
+                                <description>
+                                     <![CDATA[Words that must appears within the album title, separated by a blank space. Note that API searches for titles that contains all words.]]>
+                                </description>
+                            </field>
+                            <field name="page" required="false">
+                                <description>
+                                     <![CDATA[Result page.]]>
+                                </description>
+                            </field>
+                            <field name="step" required="false">
+                                <description>
+                                     <![CDATA[Number of items to retrieve.]]>
+                                </description>
+                            </field>
+                            <field name="order" required="false">
+                                <description>
+                                     <![CDATA[Sorting field (album_name | artist_name). If not provided, results are sorted by matching relevance in descending order.]]>
+                                </description>
+                            </field>
+                            <field name="sort" required="false">
+                                <description>
+                                     <![CDATA[Sorting direction (asc | desc).]]>
+                                </description>
+                            </field>
+                        </fields>
+                    </request>
+                </method>
+            </methods>
+        </entity>
+    </entities>
+</api>
