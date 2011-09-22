@@ -18,16 +18,16 @@ The official API can be found at http://lab.playme.com.
 Getting Started
 ---------------
 You can download and install PlayMeBuilder releases using 
-'pip install PlayMe' or 'easy_install PlayMe'.
+'pip install PlayMeBuilder' or 'easy_install PlayMeBuilder'.
 
 You can get the development version from Git repository on github,
 then run "python setup.py install".
 
 In both cases at the end of installation process you can run a script
-named 'playme':
+named 'playme-builder':
 
-    $ playme -h
-    Usage: playme build -l LANGUAGE -f FILE -d DESTINATION
+    $ playme-builder -h
+    Usage: playme-builder build [-l LANGUAGE -f FILE -d DESTINATION]
 
     Options:
       -h, --help            show this help message and exit.
@@ -44,8 +44,8 @@ named 'playme':
 
 If you run without options:
 
-    $ playme
-    $ playme build
+    $ playme-builder
+    $ playme-builder build
 
 the script use the internal XML schema to build an API client 
 for each supported language, it saves them in the home folder of the user.
