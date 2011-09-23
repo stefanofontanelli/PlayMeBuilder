@@ -17,7 +17,7 @@ The official API can be found at http://lab.playme.com.
                    'Topic :: Software Development :: Code Generators'],
       keywords='Play.me API',
       author='Stefano Fontanelli',
-      author_email='s.fontanelli@gmail.com',
+      author_email='s.fontanelli@asidev.com',
       url='http://github.com/stefanofontanelli/PlayMeBuilder',
       license='GPL',
       packages=['PlayMeBuilder'],

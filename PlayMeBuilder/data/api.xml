@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<api name="PlayMe" version="1.0" uri="http://api.playme.com">
-
+<api name="PlayMe" version="1.0" uri="http://api.playme.com" xmlns="http://api.playme.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://api.playme.com api.xsd">
+    <description>
+        <![CDATA[The Play.me API allows you to access an extensive music catalog, but the size of the catalog depends on the country that you're in due to licensing restrictions. Play.me is current available in Italy and the US only..]]>
+    </description>
     <entities>
         <entity name="Album">
+            <description>
+                <![CDATA[Album entity collects album basic infos, such as code, title, cover image urls and author. It does not contain tracks infos.]]>
+            </description>
             <methods>
                 <method name="get" public="true" created="1.0">
                     <description>
